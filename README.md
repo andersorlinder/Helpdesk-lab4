@@ -1,2 +1,5 @@
 # Helpdesk-lab4
-Clean code course Khosro Anders
+ITHS
+Clean code 2019-2020
+Khosro Jadidi
+Anders Orlinder
