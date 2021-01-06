@@ -1,6 +1,5 @@
 ﻿using IT_Helpdesk.DbContexts;
 using IT_Helpdesk.Models;
-using IT_Helpdesk.Models.RequestModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -27,22 +26,15 @@ namespace IT_Helpdesk.Controllers
 
         [HttpPost]
         [Route("submit")]
-        public async Task<IActionResult> Submit([FromBody] SubmitRequest request)
+        public async Task<IActionResult> Submit([FromBody] IT_HelpdeskModel request)
         {
-            var submittedReq = new IT_HelpdeskModel
-            {
-                Title = request.Title,
-                Type = request.Type,
-                Date = request.Date
-            };          
-            context.IT_Helpdesk.Add(submittedReq);
+            context.IT_Helpdesk.Add(request);
             var savedToDb = await context.SaveChangesAsync();
 
             if (savedToDb == 0)
-            {
-                return BadRequest();
-            }
-            return Ok();
+                return BadRequest("Something went wrong.");
+
+            return Ok($"A request with the following title was submitted: {request.Title}");
         }
     }
 }

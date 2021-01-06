@@ -29,6 +29,10 @@ namespace Maintenance_Helpdesk.Models
         public int PhoneNumber { get; set; }
 
         [Required]
+        [JsonPropertyName("email")]
+        public int Email { get; set; }
+
+        [Required]
         [JsonPropertyName("room-number")]
         public int RoomNumber { get; set; }
 

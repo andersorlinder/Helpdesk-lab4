@@ -30,7 +30,7 @@ namespace IT_Helpdesk
             //        )
             services.AddDbContext<IT_HelpdeskDbContext>(options =>
                 options.UseSqlite(
-                    @"Data Source=(localdb)\MSSQLLocalDB;Filename=IT_Helpdesk.db"
+                    @"Filename=Database/IT_Helpdesk_Db.db"
                     )
                 );
         }

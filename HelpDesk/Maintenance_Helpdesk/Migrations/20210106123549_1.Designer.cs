@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Maintenance_Helpdesk.Migrations
 {
     [DbContext(typeof(Maintenance_HelpdeskDbContext))]
-    [Migration("20210106001253_1")]
+    [Migration("20210106123549_1")]
     partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,9 @@ namespace Maintenance_Helpdesk.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Email")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
