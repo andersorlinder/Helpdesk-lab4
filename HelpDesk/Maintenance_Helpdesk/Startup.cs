@@ -1,4 +1,4 @@
-using IT_Helpdesk.DbContexts;
+using Maintenance_Helpdesk.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace IT_Helpdesk
+namespace Maintenance_Helpdesk
 {
     public class Startup
     {
@@ -23,9 +23,9 @@ namespace IT_Helpdesk
         {
             //(localdb)\mssqllocaldb
             services.AddControllers();
-            services.AddDbContext<IT_HelpdeskDbContext>(options =>
+            services.AddDbContext<Maintenance_HelpdeskDbContext>(options =>
                 options.UseSqlServer(
-                    @"Server=(localdb)\MSSQLLocalDB; Database = ITHelpdeskDb; Trusted_Connection = True;"
+                    @"Server=(localdb)\mssqllocaldb; Database = MaintenanceHelpdesk; Trusted_Connection = True;"
                     )
                 );
         }
