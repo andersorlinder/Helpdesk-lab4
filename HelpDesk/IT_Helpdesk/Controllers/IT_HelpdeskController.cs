@@ -35,12 +35,12 @@ namespace IT_Helpdesk.Controllers
                 Type = request.Type,
                 Date = request.Date
             };          
-                context.IT_Helpdesk.Add(submittedReq);
-                var result=await context.SaveChangesAsync();
-                if (result>0)
-                {
-                    return Ok();
-                }
+            context.IT_Helpdesk.Add(submittedReq);
+            var result=await context.SaveChangesAsync();
+            if (result>0)
+            {
+                return Ok();
+            }
             return BadRequest();
         }
     }
