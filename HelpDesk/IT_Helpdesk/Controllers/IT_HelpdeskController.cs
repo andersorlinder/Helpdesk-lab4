@@ -36,12 +36,13 @@ namespace IT_Helpdesk.Controllers
                 Date = request.Date
             };          
             context.IT_Helpdesk.Add(submittedReq);
-            var result=await context.SaveChangesAsync();
-            if (result>0)
+            var savedToDb = await context.SaveChangesAsync();
+
+            if (savedToDb == 0)
             {
-                return Ok();
+                return BadRequest();
             }
-            return BadRequest();
+            return Ok();
         }
     }
 }
