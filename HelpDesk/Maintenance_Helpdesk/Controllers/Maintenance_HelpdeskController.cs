@@ -35,7 +35,7 @@ namespace Maintenance_Helpdesk.Controllers
             {
                 return BadRequest("Post doesn't work");
             }
-            return Ok();
+            return Ok($"A request with the following title was submitted: {request.Title}");
         }
     }
 }

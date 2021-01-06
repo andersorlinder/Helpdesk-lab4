@@ -17,7 +17,7 @@ namespace IT_Helpdesk.Models
 
         [Required]
         [JsonPropertyName("date")]
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
 
         [Required]
         [JsonPropertyName("title")]
@@ -32,7 +32,7 @@ namespace IT_Helpdesk.Models
         public string Description { get; set; }
 
         [Required]
-        [JsonPropertyName("phone")]
+        [JsonPropertyName("phoneNumber")]
         public string PhoneNumber { get; set; }
 
         [Required]

@@ -1,13 +1,17 @@
-using IT_Helpdesk.DbContexts;
+using HR_Helpdesk.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace IT_Helpdesk
+namespace HR_Helpdesk
 {
     public class Startup
     {
@@ -17,18 +21,14 @@ namespace IT_Helpdesk
         {
             Configuration = configuration;
         }
-
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //services.AddDbContext<IT_HelpdeskDbContext>(options =>
-            //    options.UseSqlServer(
-            //        @"Server=(localdb)\MSSQLLocalDB; Database = ITHelpdeskDb; Trusted_Connection = True;"
-            //        )
-            services.AddDbContext<IT_HelpdeskDbContext>(options =>
+            services.AddDbContext<HR_HelpdeskDbContext>(options=>
                 options.UseSqlite(
-                    @"Filename=Database/IT_Helpdesk_Db.db"
-                    )
+                    @"Filename=Database/HR_Helpdesk_Db.db"
+                )
             );
         }
 
