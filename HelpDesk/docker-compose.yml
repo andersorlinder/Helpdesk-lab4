@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  maintenance_helpdesk:
+    ports:
+        - "80:80"
+    image: ${DOCKER_REGISTRY-}maintenancehelpdesk
+    build:
+      context: .
+      dockerfile: Maintenance_Helpdesk/Dockerfile
