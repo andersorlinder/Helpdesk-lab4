@@ -15,6 +15,6 @@ namespace HR_Helpdesk.Context
         {
         }
 
-        public DbSet<HR_HelpdeskModel> MyProperty { get; set; }
+        public DbSet<HR_HelpdeskModel> HR_Helpdesk { get; set; }
     }
 }

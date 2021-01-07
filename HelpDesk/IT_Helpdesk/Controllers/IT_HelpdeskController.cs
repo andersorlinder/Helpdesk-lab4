@@ -20,7 +20,6 @@ namespace IT_Helpdesk.Controllers
         [Route("get")]
         public IActionResult Get()
         {
-
             return Ok("Get Works");
         }
 

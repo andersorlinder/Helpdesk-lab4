@@ -21,8 +21,8 @@ namespace Maintenance_Helpdesk
         {
             services.AddControllers();
             services.AddDbContext<Maintenance_HelpdeskDbContext>(options =>
-                options.UseSqlServer(
-                    @"Server=(localdb)\mssqllocaldb; Database = MaintenanceHelpdesk; Trusted_Connection = True;"
+                options.UseSqlite(
+                    @"Filename=Database/Maintenance_Helpdesk.db"
                     )
                 );
         }
