@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IT_Helpdesk", "IT_Helpdesk\IT_Helpdesk.csproj", "{A93E6A04-2D5F-4A66-942B-61C83437945C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maintenance_Helpdesk", "Maintenance_Helpdesk\Maintenance_Helpdesk.csproj", "{9E798410-3DE7-475C-AAC9-C8EEDFDE14E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maintenance_Helpdesk", "Maintenance_Helpdesk\Maintenance_Helpdesk.csproj", "{9E798410-3DE7-475C-AAC9-C8EEDFDE14E3}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4E6A2ABD-CDA8-434C-B9D9-C56AF296B48C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9E798410-3DE7-475C-AAC9-C8EEDFDE14E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E798410-3DE7-475C-AAC9-C8EEDFDE14E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E798410-3DE7-475C-AAC9-C8EEDFDE14E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E6A2ABD-CDA8-434C-B9D9-C56AF296B48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6A2ABD-CDA8-434C-B9D9-C56AF296B48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6A2ABD-CDA8-434C-B9D9-C56AF296B48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6A2ABD-CDA8-434C-B9D9-C56AF296B48C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
