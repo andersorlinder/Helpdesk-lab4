@@ -3,10 +3,10 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>4e6a2abd-cda8-434c-b9d9-c56af296b48c</ProjectGuid>
+    <ProjectGuid>886f531b-d67c-470f-9d16-7bd7140dcee8</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>maintenance_helpdesk</DockerServiceName>
+    <DockerServiceName>it_helpdesk</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
