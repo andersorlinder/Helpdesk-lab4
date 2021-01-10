@@ -21,6 +21,17 @@ namespace Maintenance_Helpdesk
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("*")
+                                                          .AllowAnyHeader()
+                                                          .AllowAnyMethod();
+                                  });
+            });
+
             //(localdb)\mssqllocaldb
             services.AddControllers();
             services.AddDbContext<Maintenance_HelpdeskDbContext>(options =>
@@ -39,6 +50,7 @@ namespace Maintenance_Helpdesk
             }
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

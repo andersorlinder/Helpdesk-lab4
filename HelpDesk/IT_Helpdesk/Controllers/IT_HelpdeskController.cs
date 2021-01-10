@@ -1,6 +1,7 @@
 ﻿using IT_Helpdesk.DbContexts;
 using IT_Helpdesk.Models;
 using IT_Helpdesk.Models.RequestModels;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
