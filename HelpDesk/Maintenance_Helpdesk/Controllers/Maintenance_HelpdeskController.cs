@@ -31,14 +31,14 @@ namespace Maintenance_Helpdesk.Controllers
         [Route("submit")]
         public async Task<IActionResult> Submit([FromBody] Maintenance_HelpdeskModel request)
         {
-            //context.Maintenance_Helpdesk.Add(request);
-            //var savedToDb = await context.SaveChangesAsync();
-
-            //if (savedToDb == 0)
-            //{
-            //    return BadRequest("Post doesn't work");
-            //}
-            return Ok(request.Name);
+            context.Maintenance_Helpdesk.Add(request);
+            var savedToDb = await context.SaveChangesAsync();
+            
+            if (savedToDb == 0)
+            {
+                return BadRequest("Post doesn't work");
+            }
+            return Ok();
         }
     }
 }

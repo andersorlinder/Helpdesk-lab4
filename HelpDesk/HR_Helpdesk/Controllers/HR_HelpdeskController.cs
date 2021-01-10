@@ -1,17 +1,21 @@
-﻿using IT_Helpdesk.DbContexts;
-using IT_Helpdesk.Models;
+﻿using HR_Helpdesk.Context;
+using HR_Helpdesk.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace IT_Helpdesk.Controllers
+namespace HR_Helpdesk.Controllers
 {
     [Controller]
     [Route("[Controller]")]
-    public class IT_HelpdeskController : Controller
+    public class HR_HelpdeskController:Controller
     {
-        private IT_HelpdeskDbContext context;
+        private readonly HR_HelpdeskDbContext context;
 
-        public IT_HelpdeskController(IT_HelpdeskDbContext context)
+        public HR_HelpdeskController(HR_HelpdeskDbContext context)
         {
             this.context = context;
         }
@@ -25,9 +29,9 @@ namespace IT_Helpdesk.Controllers
 
         [HttpPost]
         [Route("submit")]
-        public async Task<IActionResult> Submit([FromBody] IT_HelpdeskModel request)
+        public async Task<IActionResult> Submit([FromBody] HR_HelpdeskModel request)
         {
-            context.IT_Helpdesk.Add(request);
+            context.HR_Helpdesk.Add(request);
             var savedToDb = await context.SaveChangesAsync();
 
             if (savedToDb == 0)
