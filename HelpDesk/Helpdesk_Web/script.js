@@ -13,7 +13,7 @@ async function handleFormSubmit (event) {
 }
 
 function clearAllStatus() {
-    const formStatusTagsdocument = document.querySelectorAll("status");
+    const formStatusTagsdocument = document.querySelectorAll(".status");
     formStatusTagsdocument.forEach(statusTag => {
         statusTag.innerHTML = "";
     });
