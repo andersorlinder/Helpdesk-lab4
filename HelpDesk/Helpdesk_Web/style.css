@@ -7,11 +7,11 @@ body {
 }
 
 div.HelpdeskForm {
-    text-align: center;
     display: inline-block;
+    text-align: center;
+    vertical-align: top;
     width: 250px;
     margin: auto;
-    vertical-align: top;
 }
 
 form {
@@ -19,11 +19,14 @@ form {
 }
 
 input, select, label, textarea, p {
-    resize: none;
-    margin-left: 40px;
-    text-align: left;
-
     display: block;
+    resize: none;
+    text-align: left;
+    margin-left: 40px;
+}
+
+label {
+    margin-bottom: 2px;
 }
 
 .status {
