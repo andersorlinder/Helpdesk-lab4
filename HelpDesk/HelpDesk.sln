@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maintenance_Helpdesk", "Mai
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{886F531B-D67C-470F-9D16-7BD7140DCEE8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_Helpdesk", "HR_Helpdesk\HR_Helpdesk.csproj", "{7EA3CDFD-5928-443B-ACCB-6F41E4807C6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{886F531B-D67C-470F-9D16-7BD7140DCEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886F531B-D67C-470F-9D16-7BD7140DCEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886F531B-D67C-470F-9D16-7BD7140DCEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EA3CDFD-5928-443B-ACCB-6F41E4807C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA3CDFD-5928-443B-ACCB-6F41E4807C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA3CDFD-5928-443B-ACCB-6F41E4807C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EA3CDFD-5928-443B-ACCB-6F41E4807C6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
