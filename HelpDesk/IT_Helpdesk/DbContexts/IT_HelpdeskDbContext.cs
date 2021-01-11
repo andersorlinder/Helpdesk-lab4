@@ -10,11 +10,6 @@ namespace IT_Helpdesk.DbContexts
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
-
         public DbSet<IT_HelpdeskModel> IT_Helpdesk { get; set; }
     }
 }

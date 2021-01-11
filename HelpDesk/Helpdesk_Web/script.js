@@ -6,10 +6,10 @@ async function handleFormSubmit (event) {
     event.preventDefault();
     clearAllStatus();
 
-    const jsonString = parceFormData(event.target);
+    const jsonString = parseFormDataToJsonString(event.target);
     const postUrl = getPostUrl(this.id);
     const responseCode = await postRequest(postUrl, jsonString)
-    PrintStatus(this, responseCode);
+    printStatus(this, responseCode);
 }
 
 function clearAllStatus() {
@@ -30,10 +30,10 @@ function getPostUrl(formElementId) {
     }
 }
 
-function parceFormData(eventTarget) {
+function parseFormDataToJsonString(eventTarget) {
     const data = new FormData(eventTarget);
     const json = Object.fromEntries(data.entries());
-    return JSON.stringify(json)
+    return JSON.stringify(json);
 }
 
 async function postRequest(apiURL, body) {
@@ -50,21 +50,21 @@ async function postRequest(apiURL, body) {
     .catch(response => response.status);
 }
 
-function PrintStatus(formElement, responseCode) {
+function printStatus(formElement, responseCode) {
     const statusTag = formElement.querySelector(".status");
 
     if (responseCode != 200) {
-        statusTag.innerHTML = "Server error, please try again!"
+        statusTag.innerHTML = "Server error, please try again!";
         return;
     }
-    statusTag.innerHTML = "Helpdesk registered!"
+    statusTag.innerHTML = "Helpdesk registered!";
 }
 
-const ITHelpdeskForm = document.querySelector('#ITHelpdeskForm');
-ITHelpdeskForm.addEventListener('submit', handleFormSubmit);
+const ITHelpdeskFormElement = document.querySelector('#ITHelpdeskForm');
+ITHelpdeskFormElement.addEventListener('submit', handleFormSubmit);
 
-const MaintenanceHelpdeskForm = document.querySelector('#MaintenanceHelpdeskForm');
-MaintenanceHelpdeskForm.addEventListener('submit', handleFormSubmit);
+const MaintenanceHelpdeskFormElement = document.querySelector('#MaintenanceHelpdeskForm');
+MaintenanceHelpdeskFormElement.addEventListener('submit', handleFormSubmit);
 
-const HRHelpdeskForm = document.querySelector('#HRHelpdeskForm');
-HRHelpdeskForm.addEventListener('submit', handleFormSubmit);
+const HRHelpdeskFormElement = document.querySelector('#HRHelpdeskForm');
+HRHelpdeskFormElement.addEventListener('submit', handleFormSubmit);

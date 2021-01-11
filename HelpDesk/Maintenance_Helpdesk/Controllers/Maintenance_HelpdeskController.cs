@@ -22,7 +22,6 @@ namespace Maintenance_Helpdesk.Controllers
         [Route("get")]
         public IActionResult Get()
         {
-
             return Ok("Get Works");
         }
 
@@ -33,7 +32,7 @@ namespace Maintenance_Helpdesk.Controllers
         {
             context.Maintenance_Helpdesk.Add(request);
             var savedToDb = await context.SaveChangesAsync();
-            
+
             if (savedToDb == 0)
             {
                 return BadRequest();
