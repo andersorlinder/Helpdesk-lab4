@@ -1,17 +1,14 @@
-﻿using HR_Helpdesk.Context;
+﻿using HR_Helpdesk.DBContexts;
 using HR_Helpdesk.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HR_Helpdesk.Controllers
 {
     [Controller]
     [Route("[Controller]")]
-    public class HR_HelpdeskController:Controller
+    public class HR_HelpdeskController : Controller
     {
         private readonly HR_HelpdeskDbContext context;
 
@@ -20,6 +17,7 @@ namespace HR_Helpdesk.Controllers
             this.context = context;
         }
 
+        [EnableCors("AllowAll")]
         [HttpGet]
         [Route("get")]
         public IActionResult Get()
@@ -27,6 +25,7 @@ namespace HR_Helpdesk.Controllers
             return Ok("Get Works");
         }
 
+        [EnableCors("AllowAll")]
         [HttpPost]
         [Route("submit")]
         public async Task<IActionResult> Submit([FromBody] HR_HelpdeskModel request)
@@ -35,9 +34,9 @@ namespace HR_Helpdesk.Controllers
             var savedToDb = await context.SaveChangesAsync();
 
             if (savedToDb == 0)
-                return BadRequest("Something went wrong.");
+                return BadRequest();
 
-            return Ok($"A request with the following title was submitted: {request.Title}");
+            return Ok();
         }
     }
 }

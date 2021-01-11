@@ -19,6 +19,17 @@ namespace Maintenance_Helpdesk
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder.WithOrigins("*")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                }
+                );
+            });
+
             services.AddControllers();
             services.AddDbContext<Maintenance_HelpdeskDbContext>(options =>
                 options.UseSqlite(
@@ -35,6 +46,7 @@ namespace Maintenance_Helpdesk
             }
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

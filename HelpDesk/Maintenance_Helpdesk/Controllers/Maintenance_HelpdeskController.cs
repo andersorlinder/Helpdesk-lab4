@@ -1,5 +1,6 @@
 ﻿using Maintenance_Helpdesk.DbContexts;
 using Maintenance_Helpdesk.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -16,6 +17,7 @@ namespace Maintenance_Helpdesk.Controllers
             this.context = context;
         }
 
+        [EnableCors("AllowAll")]
         [HttpGet]
         [Route("get")]
         public IActionResult Get()
@@ -24,6 +26,7 @@ namespace Maintenance_Helpdesk.Controllers
             return Ok("Get Works");
         }
 
+        [EnableCors("AllowAll")]
         [HttpPost]
         [Route("submit")]
         public async Task<IActionResult> Submit([FromBody] Maintenance_HelpdeskModel request)
@@ -33,9 +36,9 @@ namespace Maintenance_Helpdesk.Controllers
             
             if (savedToDb == 0)
             {
-                return BadRequest("Post doesn't work");
+                return BadRequest();
             }
-            return Ok($"A request with the following title was submitted: {request.Title}");
+            return Ok();
         }
     }
 }
