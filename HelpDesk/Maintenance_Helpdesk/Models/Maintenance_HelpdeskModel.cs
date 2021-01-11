@@ -18,7 +18,7 @@ namespace Maintenance_Helpdesk.Models
 
         [Required]
         [JsonPropertyName("priority")]
-        public string Priority { get; set; }
+        public int Priority { get; set; }
 
         [Required]
         [JsonPropertyName("name")]
@@ -34,11 +34,7 @@ namespace Maintenance_Helpdesk.Models
 
         [Required]
         [JsonPropertyName("roomNumber")]
-        public string RoomNumber { get; set; }
-
-        [Required]
-        [JsonPropertyName("title")]
-        public string Title { get; set; }
+        public int RoomNumber { get; set; }
 
         [Required]
         [JsonPropertyName("description")]

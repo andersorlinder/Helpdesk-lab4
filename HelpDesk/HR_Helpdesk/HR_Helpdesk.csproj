@@ -4,7 +4,15 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>e9b02803-ea88-4d93-9920-799dea968a27</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
@@ -18,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Database\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

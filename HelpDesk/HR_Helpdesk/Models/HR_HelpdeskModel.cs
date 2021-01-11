@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace HR_Helpdesk.Models
 {
@@ -15,7 +11,6 @@ namespace HR_Helpdesk.Models
         public int Id { get; set; }
 
         [Required]
-        [JsonPropertyName("date")]
         public DateTime Date { get; set; } = DateTime.Now;
 
         [Required]
@@ -23,8 +18,24 @@ namespace HR_Helpdesk.Models
         public string Type { get; set; }
 
         [Required]
-        [JsonPropertyName("title")]
-        public string Title { get; set; }
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        [Required]
+        [JsonPropertyName("employmentNumber")]
+        public int EmploymentNumber { get; set; }
+
+        [Required]
+        [JsonPropertyName("phoneNumber")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [JsonPropertyName("email")]
+        public string Email { get; set; }
+
+        [Required]
+        [JsonPropertyName("chief")]
+        public string Chief { get; set; }
 
         [Required]
         [JsonPropertyName("description")]
