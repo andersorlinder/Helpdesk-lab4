@@ -1,4 +1,4 @@
-header {
+body {
     text-align: center;
 }
 
@@ -18,7 +18,7 @@ form {
     display: block;
 }
 
-input, select, label, textarea {
+input, select, label, textarea, p {
     resize: none;
     margin-left: 40px;
     text-align: left;

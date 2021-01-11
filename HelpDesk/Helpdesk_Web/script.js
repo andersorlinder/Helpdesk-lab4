@@ -7,11 +7,9 @@ async function handleFormSubmit (event) {
     clearAllStatus();
 
     const jsonString = parceFormData(event.target);
-    const url = getUrl(this.id);
-    const statusTag = this.querySelector(".status");
-    
-    const responseCode = await postRequest(url, jsonString)
-    PrintStatus(responseCode);
+    const postUrl = getPostUrl(this.id);
+    const responseCode = await postRequest(postUrl, jsonString)
+    PrintStatus(this, responseCode);
 }
 
 function clearAllStatus() {
@@ -21,7 +19,7 @@ function clearAllStatus() {
     });
 }
 
-function getUrl(formElementId) {
+function getPostUrl(formElementId) {
     switch (formElementId) {
         case 'ITHelpdeskForm':
             return ITHelpdeskUrl;
@@ -38,7 +36,7 @@ function parceFormData(eventTarget) {
     return JSON.stringify(json)
 }
 
-async function postRequest (apiURL, body) {
+async function postRequest(apiURL, body) {
     return await fetch(apiURL, {
         method: 'POST',
         mode: 'cors',
@@ -49,22 +47,24 @@ async function postRequest (apiURL, body) {
         body
     })
     .then(response => response.status)
-    .catch();
+    .catch(response => response.status);
 }
 
-function PrintStatus(responseCode) {
+function PrintStatus(formElement, responseCode) {
+    const statusTag = formElement.querySelector(".status");
+
     if (responseCode != 200) {
-        statusTag.innerHTML = "Server error, please try again"
+        statusTag.innerHTML = "Server error, please try again!"
         return;
     }
-    statusTag.innerHTML = "Helpdesk registered"
+    statusTag.innerHTML = "Helpdesk registered!"
 }
 
-// const ITHelpdeskForm = document.querySelector('#ITHelpdeskForm');
-// ITHelpdeskForm.addEventListener('submit', postITHelpdesk);
+const ITHelpdeskForm = document.querySelector('#ITHelpdeskForm');
+ITHelpdeskForm.addEventListener('submit', handleFormSubmit);
 
 const MaintenanceHelpdeskForm = document.querySelector('#MaintenanceHelpdeskForm');
 MaintenanceHelpdeskForm.addEventListener('submit', handleFormSubmit);
 
-// const HRHelpdeskForm = document.querySelector('#HRHelpdeskForm');
-// HRHelpdeskForm.addEventListener('submit', postHRHelpdeskForm);
+const HRHelpdeskForm = document.querySelector('#HRHelpdeskForm');
+HRHelpdeskForm.addEventListener('submit', handleFormSubmit);
