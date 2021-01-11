@@ -36,7 +36,7 @@ namespace Maintenance_Helpdesk.Controllers
             
             if (savedToDb == 0)
             {
-                return BadRequest("Post doesn't work");
+                return BadRequest();
             }
             return Ok();
         }

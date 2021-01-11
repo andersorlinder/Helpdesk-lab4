@@ -21,13 +21,13 @@ namespace Maintenance_Helpdesk
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll",
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("*")
-                                                          .AllowAnyHeader()
-                                                          .AllowAnyMethod();
-                                  });
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder.WithOrigins("*")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                }
+                );
             });
 
             services.AddControllers();

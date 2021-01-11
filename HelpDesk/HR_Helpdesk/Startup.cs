@@ -1,15 +1,10 @@
-using HR_Helpdesk.Context;
+using HR_Helpdesk.DBContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HR_Helpdesk
 {
@@ -24,6 +19,17 @@ namespace HR_Helpdesk
         
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder.WithOrigins("*")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                }
+                );
+            });
+
             services.AddControllers();
             services.AddDbContext<HR_HelpdeskDbContext>(options=>
                 options.UseSqlite(
@@ -40,6 +46,7 @@ namespace HR_Helpdesk
             }
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
